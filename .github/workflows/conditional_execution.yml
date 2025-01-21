@@ -1,0 +1,22 @@
+name: Conditional Execution Statements
+
+on: workflow_dispatch
+
+env:
+    var: 1
+
+jobs:
+    my-job1:
+        if: ${{env.var}} == 1
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "executing job1"
+
+    my-job2:
+        if: ${{env.var}} == 2
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "executing job2"
+
+    
+
