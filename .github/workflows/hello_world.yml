@@ -1,0 +1,25 @@
+name: hello_world_workflow
+
+on: workflow_dispatch
+
+jobs:
+    job1:
+        runs-on: ubuntu:latest
+        
+        steps:
+            # run a single shell command in this step
+            - run: echo 'hello world!'
+
+            # run multiple shell commands in one step
+            - name: Run Multiple shell commands
+              run: |
+                echo 'statement1'
+                echo 'statement2'
+                echo 'statement3'
+
+            # run an predefined action from marketplace
+            - name: Use Action from Marketplace to checkout repostiory code
+              uses: actions/checkout@v4
+
+            - run: echo 'the ${{github.repository}} repository has been cloned to the runner'
+
