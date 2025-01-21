@@ -1,6 +1,6 @@
 name: Conditional Execution Statements
 
-on: workflow_dispatch
+on: [workflow_dispatch, pull_request]
 
 
 jobs:
@@ -32,6 +32,18 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "executing job2"
+
+
+    my-job3:
+        runs-on: ubuntu-latest
+        steps:
+            - name: if_issue
+              if: github.event.issue
+              run: echo "this is triggered due to an issue"
+
+            - name: if_pr
+              if: github.event.pull_request
+              run: echo "This is triggered due to an pull request"
 
     
 

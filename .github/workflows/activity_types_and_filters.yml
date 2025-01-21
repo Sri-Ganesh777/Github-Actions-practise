@@ -1,0 +1,31 @@
+name: Demo on Activity types and Filters
+
+on:
+    # specify the type using the types option
+    label:
+        types:
+            - created
+    
+    # apply filters by specifying the required branches.
+    push:
+        branches:
+            - main
+            - branch1
+
+    pull_request:
+        types:
+            - opened
+
+        branches-ignore:
+            - test
+    
+
+    page_build:
+
+
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Running job1"
