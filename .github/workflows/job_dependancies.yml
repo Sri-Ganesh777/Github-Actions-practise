@@ -1,0 +1,22 @@
+name: Dependant Jobs Execution
+
+on: workflow_dispatch
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "running Job1"
+
+    job2:
+        runs-on: ubuntu-latest
+        needs: job1
+        steps:
+            - run: echo "running Job2"
+
+    job3:
+        runs-on: ubuntu-latest
+        if: ${{always()}}
+        needs: [job1, job2]
+        steps:
+            - run: echo "running Job3"
