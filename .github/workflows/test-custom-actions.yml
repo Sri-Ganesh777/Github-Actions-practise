@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Test Custom Action
         id: teststep
         uses: ./.github/actions/hello-world-composite-action
