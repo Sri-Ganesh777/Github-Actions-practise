@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: Sri-Ganesh777/hello-world-docker-action@v1
+        uses: Sri-Ganesh777/hello-world-docker-action@v2
         with:
           who-to-greet: 'Sri Ganesh'
 
