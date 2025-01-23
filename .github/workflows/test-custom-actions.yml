@@ -14,3 +14,9 @@ jobs:
 
       - name: Get the output time
         run: echo "The time was ${{steps.hello.outputs.time}}"
+
+      - name: Test Custom Action
+        id: teststep
+        uses: ./.github/actions/hello-world-composite-action
+        with:
+          who-to-greet: 'Sri Ganesh.'
