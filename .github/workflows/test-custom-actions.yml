@@ -15,6 +15,9 @@ jobs:
       - name: Get the output time
         run: echo "The time was ${{steps.hello.outputs.time}}"
 
+  compositee-action:
+    runs-on: ubuntu-latest
+    steps:
       - name: Test Custom Action
         id: teststep
         uses: ./.github/actions/hello-world-composite-action
