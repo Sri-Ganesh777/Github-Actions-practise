@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: Sri-Ganesh777/CustomActions/tree/main/DockerContainerActions/hello-world-docker-action
+        uses: Sri-Ganesh777/CustomActions/tree/main/DockerContainerActions/hello-world-docker-action@v1
         with:
           who-to-greet: 'Sri Ganesh'
 
