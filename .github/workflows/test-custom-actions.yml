@@ -18,6 +18,13 @@ jobs:
   compositee-action:
     runs-on: ubuntu-latest
     steps:
+
+      - name: list all the files
+        run: |
+           ls ./.github/actions/hello-world-composite-action
+           ls ./.github/actions/
+           
+
       - name: Test Custom Action
         id: teststep
         uses: ./.github/actions/hello-world-composite-action
