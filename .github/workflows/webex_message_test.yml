@@ -1,0 +1,14 @@
+name: Testing Webex Message Action
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Webex Message
+        uses: ./.github/actions/send-webex-message
+        with:
+          message: 'Hello this is a test message'
+          space: 'Y2lzY29zcGFyazovL3VzL1JPT00vODk2M2Y5YzAtZDFhZS0xMWVmLWIzNTctODVmM2QwN2JjMjE5'
+          token: ${{ secrets.WEBEX_TOKEN }}

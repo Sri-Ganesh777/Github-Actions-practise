@@ -1,0 +1,26 @@
+name: 'Send Webex Message'
+
+description: 'Send a message to a Webex Teams space'
+
+inputs:
+    message:
+        description: 'Message to send'
+        required: true
+
+    space:
+        description: 'Space ID to send message to'
+        required: true
+
+    token:
+        description: 'Webex Teams API token'
+        required: true
+
+runs:
+    using: "composite"
+    steps:
+      - name: Send Message
+        shell: bash
+        run: |
+          curl -X POST -H "Authorization: Bearer ${{inputs.token}}" -H "Content-Type: application/json" -d "{\"roomId\": \"${{inputs.space}}\", \"text\": \"${{inputs.message}}\"}" https://webexapis.com/v1/messages
+      
+      
