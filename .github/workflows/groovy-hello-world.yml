@@ -15,6 +15,9 @@ jobs:
         with:
           distribution: 'oracle'
           java-version: '21'
+     
+      - name: Install Groovy
+        run: sudo apt-get install -y groovy
 
       - name: Run Groovy Hello World
         run: groovy hello-world.groovy
