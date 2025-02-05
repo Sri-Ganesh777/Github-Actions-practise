@@ -1,0 +1,22 @@
+name: Workflow to test Groovy Hello World script
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle'
+          java-version: '21'
+
+      - name: Run Groovy Hello World
+        run: groovy hello-world.groovy
+
+        
